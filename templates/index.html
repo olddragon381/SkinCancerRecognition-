@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán hình ảnh</title>
 </head>
 <body>
-$END$
+<center>
+
+
+    <h1>Upload Ảnh để dự đoán</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" onchange="loadFile(event)">
+        <br><br>
+        <!-- Hiển thị hình ảnh trước khi tải lên -->
+        <img id="preview" src="#" alt="Preview Image" style="display:none;" width="300">
+        <br><br>
+        <input type="submit" value="Dự đoán">
+    </form>
+
+    <!-- JavaScript để hiển thị ảnh trước khi tải lên -->
+    <script>
+        function loadFile(event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.style.display = 'block';  // Hiển thị ảnh
+        }
+    </script>
+
+    {% if prediction is not none %}
+        <h2>Kết quả dự đoán: {{ prediction }}</h2>
+        <!-- Hiển thị ảnh sau khi dự đoán -->
+
+    {% endif %}
+
+   </center>
 </body>
 </html>
