@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Bệnh</title>
+</head>
+<body>
+    <h1>Thông Tin Bệnh</h1>
+    <p><strong>Tên Bệnh:</strong> {{ disease['Tên Bệnh'] }}</p>
+    <p><strong>Mô tả:</strong> {{ disease['Mô tả'] }}</p>
+    <p><strong>Triệu chứng:</strong> {{ disease['Triệu chứng'] }}</p>
+    <p><strong>Nguyên nhân:</strong> {{ disease['Nguyên nhân'] }}</p>
+    <p><strong>Phương pháp điều trị:</strong> {{ disease['Phương pháp điều trị'] }}</p>
+    <p><strong>Phòng ngừa:</strong> {{ disease['Phòng ngừa'] }}</p>
+    <a href="{{ url_for('index') }}">Trở về trang chủ</a>
+</body>
+</html>
